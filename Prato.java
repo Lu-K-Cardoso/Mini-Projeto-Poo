@@ -12,6 +12,12 @@ public class Prato extends ItemCardapio {
         }
         @Override
         public double calcularPreco(){
-            
+            return this.precoBase;
+        }
+        public double getPrecoBase(){
+            return this.precoBase;
+        }
+        public String getCategoria(){
+            return categoria;
         }
 }
