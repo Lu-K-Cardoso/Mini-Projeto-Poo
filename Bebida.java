@@ -12,14 +12,25 @@ public class Bebida extends ItemCardapio {
             }
             this.alcoolico = alcoolico;
         }
-        public int adicionarUnidade(){
-            return this.quant += 1;
+        public void adicionarUnidade(){
+            this.quant += 1;
         }
-        public int removerUnidade(){
+        public void removerUnidade(){
             if (quant == 1) {
                 throw new ValorInvalidoException("a quantidade não pode ser menor que 1");
             }else{
-                return this.quant =- 1;
+                this.quant -= 1;
             }
         }
+        @Override
+        public double calcularPreco(){
+            return this.precoUnitario * this.quant;
+        }
+        public int getQuant(){
+            return quant;
+        }
+        public boolean getAlcoolico(){
+            return alcoolico;
+        }
+
 }
